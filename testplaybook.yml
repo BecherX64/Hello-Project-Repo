@@ -1,0 +1,10 @@
+---
+- hosts: linuxservers
+  sudo: yes
+  tasks:
+  - name: make direcotry
+    file:
+      path: "/home/ansible/jenkinsroot/workspace/Hello-Project-Repo_master/testplaybook.yml"
+      state: directory
+      owner: "ansible"
+      group: "ansible"
