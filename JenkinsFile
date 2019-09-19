@@ -1,4 +1,4 @@
-node('master') {
+node('ansible') {
     // some block
     stage('echo') {
         // some block
