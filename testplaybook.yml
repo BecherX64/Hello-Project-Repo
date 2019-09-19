@@ -4,7 +4,7 @@
   tasks:
   - name: make direcotry
     file:
-      path: "/home/ansible/jenkinsroot/workspace/Hello-Project-Repo_master/testplaybook.yml"
+      path: "/tmp/testdir"
       state: directory
       owner: "ansible"
       group: "ansible"
