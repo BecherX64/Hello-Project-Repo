@@ -10,7 +10,7 @@ node('ansible') {
         sh "hostname"
         echo 'current dir:'
         sh "pwd"
-        echo 'asdas'
+        echo 'janicko'
         
     }
 }
