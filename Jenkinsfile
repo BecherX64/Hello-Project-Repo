@@ -11,6 +11,7 @@ node('ansible') {
         echo 'current dir:'
         sh "pwd"
         echo 'janicko'
+        echo 'asdas'
         
     }
 }
