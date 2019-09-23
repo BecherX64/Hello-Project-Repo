@@ -9,18 +9,20 @@ pipeline {
     stages {
       stage('echo') {
           steps {
-            // some block
-            echo 'Hello-World'
+              echo 'Running Echo stage'
+              // some block
+              echo 'Hello-World'
           }    
       }
       stage('GitHub') {
           steps {
-            git credentialsId: '93924462-8163-4fbd-9d28-39567c887825', url: 'https://github.com/BecherX64/Hello-Project-Repo'
+              echo 'Running GitHub Stage'
+              git credentialsId: '93924462-8163-4fbd-9d28-39567c887825', url: 'https://github.com/BecherX64/Hello-Project-Repo'
           }   
       }
       stage('script') {
           steps {
-            // some block
+            echo 'Running Scrits stage'
             echo 'hostname:'
             sh "hostname"
             echo 'current dir:'
@@ -29,7 +31,8 @@ pipeline {
       }
       stage ('Ansible') {
           steps {
-            //ansiblePlaybook colorized: true, credentialsId: '7b612a74-a2af-4be7-8338-f565bf54ead9', playbook: 'testplaybook.yml'
+              echo 'Running Ansible stage'
+              //ansiblePlaybook colorized: true, credentialsId: '7b612a74-a2af-4be7-8338-f565bf54ead9', playbook: 'testplaybook.yml'
           }
       }
     }
