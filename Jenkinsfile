@@ -3,7 +3,7 @@
 pipeline {
     agent {
         dockerfile {
-            filename 'Dockerfile'
+            filename 'Ansible.Dockerfile'
         }
     }
     stage('echo') {
