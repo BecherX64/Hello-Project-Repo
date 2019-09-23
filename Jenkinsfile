@@ -25,8 +25,12 @@ pipeline {
             echo 'Running Scrits stage'
             echo 'hostname:'
             sh "hostname"
+            echo 'current user:'
+            sh "whoami"
             echo 'current dir:'
             sh "pwd"
+            echo 'List files in current dir'
+            sh "ls -al $(pwd)"
           }
       }
       stage ('Ansible') {
