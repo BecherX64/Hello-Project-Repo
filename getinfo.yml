@@ -2,12 +2,6 @@
 - hosts: all
   sudo: yes
   tasks:
-#  - name: make direcotry
-#    file:
-#      path: "/tmp/testdir"
-#      state: directory
-#      owner: "ansible"
-#      group: "ansible"
   - debug: var=inventory_hostname
   - debug: var=ansible_all_ipv4_addresses
   - debug: var=ansible_default_ipv4.address
