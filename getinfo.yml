@@ -1,0 +1,26 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+#  - name: make direcotry
+#    file:
+#      path: "/tmp/testdir"
+#      state: directory
+#      owner: "ansible"
+#      group: "ansible"
+  - debug: var=inventory_hostname
+  - debug: var=ansible_all_ipv4_addresses
+  - debug: var=ansible_default_ipv4.address
+  - name: PrintHelloWorld
+    debug:
+      msg: Hello, world!
+  - name: WhoIam
+    action: command whoami
+    register: myname
+  - name: GetHostname
+    action: command hostname
+    register: hostname
+  - debug:
+      var: myname
+  - debug:
+        var: hostname
