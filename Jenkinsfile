@@ -24,3 +24,4 @@ pipeline {
         //ansiblePlaybook colorized: true, credentialsId: '7b612a74-a2af-4be7-8338-f565bf54ead9', playbook: 'testplaybook.yml'
     }
 
+}
