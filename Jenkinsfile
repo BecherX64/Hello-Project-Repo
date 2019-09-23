@@ -30,7 +30,7 @@ pipeline {
             echo 'current dir:'
             sh "pwd"
             echo 'List files in current dir'
-            sh "ls -al $(pwd)"
+            sh "ls -al"
           }
       }
       stage ('Ansible') {
