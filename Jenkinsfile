@@ -25,8 +25,8 @@ pipeline {
             echo 'Running Scrits stage'
             echo 'hostname:'
             sh "hostname"
-            echo 'current user:'
-            sh "whoami"
+            echo 'existing users:'
+            sh "cat /etc/passwd"
             echo 'current dir:'
             sh "pwd"
             echo 'List files in current dir'
