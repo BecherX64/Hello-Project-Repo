@@ -36,7 +36,10 @@ pipeline {
       stage ('Ansible') {
           steps {
               echo 'Running Ansible stage'
-              //ansiblePlaybook colorized: true, credentialsId: '7b612a74-a2af-4be7-8338-f565bf54ead9', playbook: 'testplaybook.yml'
+              echo 'Ansible Version:'
+              sh "ansible --version"
+              echo 'Running ansible playbook:'
+              ansiblePlaybook colorized: true, playbook: 'testplaybook.yml'
           }
       }
     }
