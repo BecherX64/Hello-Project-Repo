@@ -4,6 +4,7 @@ pipeline {
             filename 'AnsibleDockerFile.Ubuntu18'
         }
     }
+    stages {
       stage('GitHub') {
           steps {
               echo 'Running GitHub Stage'
@@ -34,5 +35,5 @@ pipeline {
               ansiblePlaybook colorized: true, playbook: 'getinfo.yml', inventory: 'inventory.list'
           }
       }
-
+    }
 }
