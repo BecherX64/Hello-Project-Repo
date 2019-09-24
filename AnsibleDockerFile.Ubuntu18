@@ -9,6 +9,9 @@ FROM ubuntu:latest
 ENV http_proxy="http://192.168.200.3:808"
 ENV https_proxy="http://192.168.200.3:808"
 ENV no_proxy="localhost, 127.0.0.1, 192.168.200.0/24, .eaolab.local, .lab.local"
+ENV DEFAULT_LOCAL_TMP="/tmp"
+ENV ANSIBLE_LOCAL_TEMP="/tmp"
+ENV ANSIBLE_REMOTE_TMP="/tmp"
 
 # Install Ansible.
 RUN apt update
