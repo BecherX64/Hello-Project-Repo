@@ -25,7 +25,12 @@ pipeline {
             sh "ls -al"
           }
       }
-    
+      stage ('RunPing') {
+          steps {
+              echo 'Running Ansible Ping'
+              sh "ansible all -m ping"
+          }    
+      }      
       stage ('Ansible') {
           steps {
               echo 'Running Ansible stage'
