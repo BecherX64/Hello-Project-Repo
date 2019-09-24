@@ -1,0 +1,10 @@
+[privilege_escalation]
+#become=True
+#become_method=sudo
+#become_user=root
+#become_ask_pass=False
+
+[linux]
+10.113.1.51
+10.113.1.10
+10.113.1.20
