@@ -1,0 +1,23 @@
+#
+# Ansible Dockerfile
+#
+
+# Pull base image: Ubutu 18.04
+FROM ubuntu:latest
+
+#Env variables
+ENV http_proxy="http://192.168.200.3:808"
+ENV https_proxy="http://192.168.200.3:808"
+ENV no_proxy="localhost, 127.0.0.1, 192.168.200.0/24, .eaolab.local, .lab.local"
+
+# Install Ansible.
+RUN apt update
+RUN apt install --yes software-properties-common
+RUN apt-add-repository --yes --update ppa:ansible/ansible
+RUN apt install --yes ansible
+
+# Define working directory.
+WORKDIR /dockerworkdir
+
+# Define default command.
+CMD ["bash"]
