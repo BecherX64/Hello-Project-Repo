@@ -39,7 +39,7 @@ pipeline {
               echo 'Ansible Version:'
               sh "ansible --version"
               echo 'Running ansible playbook:'
-              ansiblePlaybook colorized: true, playbook: 'getinfo.yml', inventory: 'invertory.list'
+              ansiblePlaybook colorized: true, playbook: 'getinfo.yml', inventory: 'inventory.list'
           }
       }
     }
