@@ -23,6 +23,8 @@ pipeline {
             sh "pwd"
             echo 'List files in current dir'
             sh "ls -al"
+            echo 'List of ENV Variables'
+            sh "env"
           }
       }
       stage ('RunPing') {
