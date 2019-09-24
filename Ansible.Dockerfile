@@ -69,5 +69,5 @@ ENV ANSIBLE_LIBRARY /ansible/library
 
 WORKDIR /ansible/playbooks
 
-ENTRYPOINT ["ansible-playbook"]
+ENTRYPOINT ["/bin/bash"]
 
