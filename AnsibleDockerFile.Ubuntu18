@@ -12,6 +12,7 @@ ENV no_proxy="localhost, 127.0.0.1, 192.168.200.0/24, .eaolab.local, .lab.local"
 ENV DEFAULT_LOCAL_TMP="/tmp"
 ENV ANSIBLE_LOCAL_TEMP="/tmp"
 ENV ANSIBLE_REMOTE_TMP="/tmp"
+ENV HOME="/root/"
 
 # Install Ansible.
 RUN apt update
