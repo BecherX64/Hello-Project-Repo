@@ -24,6 +24,7 @@ pipeline {
             sh "ls -al"
           }
       }
+    
       stage ('Ansible') {
           steps {
               echo 'Running Ansible stage'
@@ -33,6 +34,5 @@ pipeline {
               ansiblePlaybook colorized: true, playbook: 'getinfo.yml', inventory: 'inventory.list'
           }
       }
-        
-    }
+
 }
