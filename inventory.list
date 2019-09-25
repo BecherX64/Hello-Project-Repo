@@ -1,3 +1,13 @@
+[all:vars]
+#host_key_checking=false
+#ansible_ssh_common_args='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+#information_environment=dev
+#information_product=prod1
+#ansible_ssh_user=ubuntu
+#ansible_ssh_pass=pass1234
+#ansible_user=root
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
 [linux]
 10.113.1.51
 10.113.1.10
