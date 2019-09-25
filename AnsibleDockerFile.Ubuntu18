@@ -12,16 +12,38 @@ ENV no_proxy="localhost, 127.0.0.1, 192.168.200.0/24, .eaolab.local, .lab.local"
 ENV DEFAULT_LOCAL_TMP="/tmp"
 ENV ANSIBLE_LOCAL_TEMP="/tmp"
 ENV ANSIBLE_REMOTE_TMP="/tmp"
-ENV HOME="/root/"
+ENV HOME="/home/ansiauto"
 
 # Install Ansible.
 RUN apt update
+RUN apt install --yes sudo
 RUN apt install --yes software-properties-common
 RUN apt-add-repository --yes --update ppa:ansible/ansible
 RUN apt install --yes ansible
 
-# Define working directory.
-WORKDIR /dockerworkdir
+#Setup Ansible ansiauto user
+RUN groupadd -g  50002 admingrp
+RUN useradd -c "ansbauto user" -g admingrp -u 50001 -m  ansiauto -s /bin/bash
+#RUN mkdir /etc/sudoers.d
+#RUN ls -la /etc/sudoers.d
+RUN echo 'User_Alias ADMINGRP=%admingrp' >/etc/sudoers.d/admingrp
+RUN echo 'Defaults:ADMINGRP !requiretty' >> /etc/sudoers.d/admingrp
+RUN echo "ADMINGRP ALL=(ALL) NOPASSWD: ALL" >>  /etc/sudoers.d/admingrp
+RUN chmod 440  /etc/sudoers.d/admingrp
 
-# Define default command.
+#Copy and setup SSH Kyes
+RUN mkdir -p /home/ansiauto/.ssh
+COPY keys/private.key /home/ansiauto/.ssh/id_rsa
+COPY keys/public.key /home/ansiauto/.ssh/id_rsa.pub
+RUN chown -R ansiauto:admingrp /home/ansiauto/.ssh/
+RUN chmod -R g-rwx,o-rwx /home/ansiauto/.ssh/
+RUN chmod g+r,o+r /home/ansiauto/.ssh/id_rsa.pub
+
+#Switch User
+USER ansiauto
+
+# Define working directory.
+WORKDIR $HOME
+
+# Define default command
 CMD ["bash"]
