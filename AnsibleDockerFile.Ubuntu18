@@ -33,7 +33,7 @@ RUN chmod 440  /etc/sudoers.d/admingrp
 
 #Copy and setup SSH Kyes
 RUN mkdir -p /home/ansiauto/.ssh
-COPY /home/smalladminkeys/private.key /home/ansiauto/.ssh/id_rsa
+COPY /home/smalladmin/keys/private.key /home/ansiauto/.ssh/id_rsa
 COPY /home/smalladmin/keys/public.key /home/ansiauto/.ssh/id_rsa.pub
 RUN chown -R ansiauto:admingrp /home/ansiauto/.ssh/
 RUN chmod -R g-rwx,o-rwx /home/ansiauto/.ssh/
